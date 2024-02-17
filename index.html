@@ -19,7 +19,7 @@
       <div class="wrapper">
         <div class="main-article">
           <h2>advice #117</h2>
-          <p>
+          <p id="advice">
             "It is easy to sit up and take notice, what's difficult is getting
             up and taking action."
           </p>
@@ -34,10 +34,30 @@
             class="desktop-image"
           />
           <div class="dice-wrapper">
-            <img src="images/icon-dice.svg" alt="#" class="icon-dice" />
+            <img
+              src="images/icon-dice.svg"
+              alt="#"
+              class="icon-dice"
+              id="dice-icon"
+            />
           </div>
         </div>
       </div>
     </main>
+
+    <script>
+      document
+        .getElementById("dice-icon")
+        .addEventListener("click", function () {
+          fetch("https://api.adviceslip.com/advice")
+            .then((Response) => Response.json())
+            .then((data) => {
+              const adviceElement = document.getElementById("advice");
+              const advice = data.slip.advice;
+              adviceElement.textContent = `"${advice}"`;
+            })
+            .catch((error) => console.error("Error fetching advice", error));
+        });
+    </script>
   </body>
 </html>
