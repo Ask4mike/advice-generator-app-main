@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Design System */
+:root {
+  /* Primary colors */
+  --clr-light-cyan: hsl(193, 38%, 86%);
+  --clr-neon-green: hsl(150, 100%, 66%);
+
+  /* Neutral Colors */
+  --clr-grayish-blue: hsl(217, 19%, 38%);
+  --clr-dark-grayish-blue: hsl(217, 19%, 24%);
+  --clr-dark-blue: hsl(218, 23%, 16%);
+
+  /* font family */
+  --ff-Manrope: "Manrope", sans-serif;
+  /* font Size */
+  --fs-regular: 1.75rem;
+  /* font weight */
+  --fw-bold: 800;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  min-height: 100vh;
+  /* overflow: hidden; */
+}
+
+html {
+  background: var(--clr-dark-blue);
+  font-family: var(--ff-Manrope);
+}
+
+.wrapper {
+  width: 80%;
+  margin: 2rem;
+}
+
+.main-article {
+  margin: 4rem auto;
+  width: 70%;
+  text-align: center;
+  background: var(--clr-dark-grayish-blue);
+  padding: 0.75rem;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px var(--clr-dark-blue);
+}
+
+.main-article h2 {
+  text-transform: uppercase;
+  color: var(--clr-neon-green);
+  font-size: 0.75rem;
+  line-height: 3;
+  margin: 1rem;
+  letter-spacing: 0.25rem;
+}
+
+.main-article p {
+  color: var(--clr-light-cyan);
+  width: 90%;
+  font-size: 1.2rem;
+  margin: 0 auto;
+}
+
+.mobile-image {
+  width: 100%;
+  margin: 0.25rem auto;
+  padding: 0.65rem;
+}
+.desktop-image {
+  visibility: hidden;
+}
+
+.dice-wrapper {
+  position: absolute;
+  top: 50%;
+  border-radius: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  margin-top: 8.5rem;
+  background: var(--clr-neon-green);
+  z-index: 1;
+}
+
+.dice-wrapper:hover {
+  box-shadow: 0 0 20px var(--clr-neon-green);
+  cursor: pointer;
+}
+
+.icon-dice {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+@media (min-width: 600px) {
+  .dice-wrapper {
+    margin-top: 8rem;
+  }
+}
+@media (min-width: 822px) {
+  .dice-wrapper {
+    margin-top: 7rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .mobile-image {
+    visibility: hidden;
+  }
+
+  .desktop-image {
+    visibility: visible;
+    margin-bottom: 5rem;
+    width: 90%;
+  }
+
+  .main-article {
+    margin: 20rem;
+    padding: 1rem;
+    width: 60%;
+  }
+  .main-article p {
+    font-size: 2rem;
+  }
+  .main-article h2 {
+    font-size: 1rem;
+    margin: 2rem;
+  }
+
+  .dice-wrapper {
+    margin-top: 14rem;
+    width: 100px;
+    height: 100px;
+  }
+  .icon-dice {
+    width: 50px;
+    height: 50px;
+  }
+}
